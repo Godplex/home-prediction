@@ -10,7 +10,7 @@ const useModelStore = create<IModelStore>()((set) => ({
     try {
       set(() => ({ loading: true, message: null }));
       const { data } = await axios.post(
-        "https://back-analisis-4.onrender.com/predict",
+        `${process.env.NEXT_PUBLIC_API_URL}/predict`,
         dataToSend
       );
       const formatter = new Intl.NumberFormat("es-CO", {
