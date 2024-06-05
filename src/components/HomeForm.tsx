@@ -34,7 +34,11 @@ const HomeForm = () => {
 
   useEffect(() => {
     if (message) {
-      toast(message.description, { type: message.status });
+      toast(message.description, {
+        type: message.status,
+        autoClose: false,
+        closeOnClick: false,
+      });
     }
   }, [message]);
 
